@@ -26,7 +26,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class FileUtils {
 	
 	/**
-	 * 获取所有文件的扩展名
+	 * 	获取所有文件的扩展名
 	 */
 	public static String getSuffixName(String fileName) {
 		//获取最后一个点的位置
