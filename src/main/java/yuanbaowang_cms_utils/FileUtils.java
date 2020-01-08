@@ -217,7 +217,6 @@ public class FileUtils {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset));
 		if(content!=null) {
 			bw.write(content);
-			
 		}
 		bw.flush();
 		bw.close();
