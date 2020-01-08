@@ -152,7 +152,7 @@ public class FileUtils {
 		//new 输入流
 		FileInputStream fileInputStream = new FileInputStream(file);
 		//new 缓冲流
-		BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream,"GBK"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream,"utf-8"));
 		String line = "";
 		//按行读取
 		while((line = br.readLine()) != null) {
@@ -216,7 +216,7 @@ public class FileUtils {
 		// 创建输出流对象
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset));
 		if(content!=null) {
-			bw.write(content);
+			bw.write(content+"\n");
 		}
 		bw.flush();
 		bw.close();
