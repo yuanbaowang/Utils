@@ -4,6 +4,7 @@
 package yuanbaowang_cms_utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -193,6 +195,34 @@ public class FileUtils {
 		//释放资源
 		closeFile(oup,inpt);
 	}
+	
+	/**
+	 * @Title: writeFile
+	 * @Description: 按照指定的编码把内容写入指定的文件中
+	 * @param path
+	 * @param content
+	 * @param charset
+	 * @throws IOException
+	 * @return: void
+	 */
+	public static void writeFile(String path, String content, String charset) throws IOException {
+		// 创建写入的文件
+		File file = new File(path);
+		// 判断父目录是否存在
+		if (!file.getParentFile().exists()) {
+			// 创建父目录
+			file.getParentFile().mkdirs();
+		}
+		// 创建输出流对象
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), charset));
+		if(content!=null) {
+			bw.write(content);
+			
+		}
+		bw.flush();
+		bw.close();
+	}
+
 	
 	
 	
