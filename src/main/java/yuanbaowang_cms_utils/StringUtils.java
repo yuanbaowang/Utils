@@ -100,7 +100,21 @@ public  class StringUtils {
 	 * 
 	 */
 	public static boolean isNumber(String str) {
-		String regex = "^\\d{1,}$";
+		String regex = "^\\d+$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(str);
+		boolean find = matcher.find();
+		return find;
+	}
+	
+	/**
+	 * 判断一个字符串是否为数字或小数
+	 * @param str
+	 * @return 为空返回true，否则返回false
+	 * 
+	 */
+	public static boolean isNumberAndDouble(String str) {
+		String regex = "^[0-9]+(\\.[0-9]+)?$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(str);
 		boolean find = matcher.find();
