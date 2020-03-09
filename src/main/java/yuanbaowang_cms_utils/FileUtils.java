@@ -223,6 +223,44 @@ public class FileUtils {
 	}
 
 	
+	/**
+	 * 	下载图片
+	 * @throws IOException 
+	 */
+	/*
+	 * @RequestMapping("downLoad") public void downLoad(HttpServletResponse
+	 * response,String filename) throws IOException { //读取文件 InputStream input = new
+	 * FileInputStream("d:\\pic\\"+filename); //设置输出格式 response.reset();
+	 * response.setContentType("bin"); response.addHeader("Content-Disposition",
+	 * "attachment;filename=\""+filename+"\"");
+	 * 
+	 * //循环取出流中数据 byte[] b = new byte[1024]; int len;
+	 * 
+	 * try { while((len = input.read(b)) > 0) {
+	 * response.getOutputStream().write(b,0,len);
+	 * 
+	 * } } catch (Exception e) { input.close(); } }
+	 */
+	
+	/**
+	 * 	进行处理上传文件
+	 * @throws IOException 
+	 * @throws IllegalStateException 
+	 */
+	/*
+	 * private String processFile(MultipartFile file) throws IllegalStateException,
+	 * IOException {
+	 * 
+	 * if(file.isEmpty()) { return ""; } //获取当前日期 SimpleDateFormat sdf = new
+	 * SimpleDateFormat("yyyyMMdd"); String subPath = sdf.format(new Date());
+	 * //图片存放的路径 File path = new File("d://pic//"+subPath); //判断目标目录时间是否存在
+	 * if(!path.exists()) { //路径不存在创建 path.mkdirs(); } //计算文件的扩展名 String suffixName
+	 * = FileUtils.getSuffixName(file.getOriginalFilename()); //使用UUid生成随机文件名 String
+	 * fileName = UUID.randomUUID().toString()+suffixName; //把文件另存到新的文件夹中
+	 * file.transferTo(new File(path+"/"+fileName)); return subPath+"/"+fileName; }
+	 */
+	
+	
 	
 	
 

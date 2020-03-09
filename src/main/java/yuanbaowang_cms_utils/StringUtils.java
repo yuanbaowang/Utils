@@ -209,6 +209,16 @@ public  class StringUtils {
 	}
 	
 	/**
+	 * 	验证身份证
+	 */
+	public static boolean isCard(String card) {
+		String regex = "(^[1-9]\\d{5}\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}$)|(^[1-9]\\d{5}(18|19|([23]\\d))\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)";
+		Pattern compile = Pattern.compile(regex);
+		Matcher matcher = compile.matcher(card);
+		return matcher.matches();
+	}
+	
+	/**
 	 * 	随机生成姓名
 	 */
 	public static String getName() {
@@ -271,6 +281,7 @@ public  class StringUtils {
         return sb.toString();
     }
     
+    
     /**
      * 	随机生成字符
      */
@@ -307,5 +318,6 @@ public  class StringUtils {
 
     }
 	
+    
 
 }
